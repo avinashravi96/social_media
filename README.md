@@ -34,19 +34,21 @@ Follow these steps to run your Django application using Docker:
     Run the migrations using the python manage.py makemigrations and python manage.py migrate commands. Since your application is running inside a Docker container, you need to run these commands within the container.
     ```
     docker-compose exec web python manage.py makemigrations
-    
+
     docker-compose exec web python manage.py migrate
 
     ```
 
-To access the Django admin interface, you need to create a superuser:
-    ```
-    docker-compose exec web python manage.py createsuperuser
-    ```
+    To access the Django admin interface, you need to create a superuser:
+        ```
+        docker-compose exec web python manage.py createsuperuser
+        ```
 6. Follow the prompts to create a superuser account.
+
 7. Access the Django admin interface at http://localhost:8000/admin/.
+
 8. Postman Documentation:
-https://documenter.getpostman.com/view/6060124/2s9Y5ZuMXx
+    https://documenter.getpostman.com/view/6060124/2s9Y5ZuMXx
 
 Note: For all the API request use login api to generate token
 Add Authorization as header in request with sample payload like below:
