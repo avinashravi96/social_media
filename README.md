@@ -30,6 +30,15 @@ Follow these steps to run your Django application using Docker:
     docker-compose down
     ```
 5. Django Admin
+    Run Migrations: 
+    Run the migrations using the python manage.py makemigrations and python manage.py migrate commands. Since your application is running inside a Docker container, you need to run these commands within the container.
+    ```
+    docker-compose exec web python manage.py makemigrations
+    
+    docker-compose exec web python manage.py migrate
+
+    ```
+
 To access the Django admin interface, you need to create a superuser:
     ```
     docker-compose exec web python manage.py createsuperuser
